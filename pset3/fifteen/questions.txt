@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. 3 x 3 through 9 x 9 (MIN = 3 <= d <= 9 = MAX)
+1. void
+2. greet(VOID)
+3. init, draw, move, won

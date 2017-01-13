@@ -1,0 +1,45 @@
+0.  BMP: 32 bit = 2^32 colors = 4,294,967,296
+    GIF: 8 bit = 2^8 colors = 256
+    JPEG: 24 bit = 2^24 colors = 16,777,216
+    PNG: 24 bit = 2^24 colors = 16,777,216
+1.  GIF; PNG doesn't, but formats were created to allow (APNG and MNG)
+2.  lossy compression - once compressed, the quality is lost permanently
+    lossless compression - compression that preserves the original quality
+3.  JPEG
+4.  2 things:
+    1. The filename's first character is changed to signal that it's been 
+        deleted in the directory entry.
+    2. The file's FAT clusters are added to the directory of free clusters.
+    Note, the file's data is never touched.
+5.  Degauss with a Type I or II degausser, physically destroy the hard-drive,
+    or (less so) overwrite with one of the 22 Gutmann patterns
+6.  It is a header file that defines typedefs for exact-width integer types and
+    the minimum and maximum values for those. It is used in the bmp.h header 
+    file.
+7.  By defining the exact widths (positive and negative for signed, positive
+    only for unsigned) of integers in a program, it keeps irregularities from
+    popping up when a program is run in different places that might manage
+    any extra bits that are assigned.
+8.  1, 4, 4, 8 bytes
+9.  BM or 0x42 0x4D
+10. bfSize is the size, in bytes, of the bitmap file with regard to the type,
+    size and layout of the actual file. It is found in the BITMAPFILEHEADER
+    structure.
+    biSize is the bytes required by the structure for dimension and color
+    format. Found in the BITMAPINFOHEADER structure.
+11. The file is top-down with the origin in the upper left corner; this also
+    means it cannot be compressed.
+12. biBitCount
+13. In this "write" case, it must mean that the function cannot return a pointer
+    to the file "outfile." When reading, it can mean that the file it is trying
+    to open does not yet exist.
+14. The 1 refers to the number of blocks. We are only needing to read from the
+    file in question once, rather than reading from it multiple times however
+    much space is specified per call.
+15. 3
+16. fseek() will change the offset of the file pointer, allowing you to
+    manipulate where the pointer is when reading it in.
+17. SEEK_CUR is a value for the int from_where variable in fseek() that will
+    allow you to change the file pointer from its current position.
+18. https://youtu.be/dQw4w9WgXcQ
+
